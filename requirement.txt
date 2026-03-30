@@ -1,0 +1,17 @@
+# ── 链路一 ──────────────────────────────────────────
+langchain-text-splitters
+FlagEmbedding
+chromadb
+neo4j
+
+# ── 链路二 ──────────────────────────────────────────
+langgraph
+langchain-core
+langchain-openai
+python-dotenv
+
+# ── PDF 解析 ─────────────────────────────────────────
+magic-pdf[full]
+
+# ── 工具 ─────────────────────────────────────────────
+requests
