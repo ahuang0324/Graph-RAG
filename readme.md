@@ -1,8 +1,11 @@
 # GraphRAG
 
+
 基于 LangGraph 构建的两阶段检索增强生成（RAG）流水线。离线阶段将 PDF 解析、切块后分别写入 ChromaDB（稠密向量）和 Neo4j（知识图谱）；在线阶段由 LangGraph 工作流对每条查询进行路由，走向量检索、图谱检索或混合检索，经 BGE-Reranker 重排后再送入大模型生成答案。
 
 ## 架构
+
+![RAG 完整流程架构图](image.png)
 
 ```
 离线阶段（链路一）
@@ -113,6 +116,8 @@ pipeline.close()
 ├── data/                # 源 PDF（不纳入版本管理）
 ├── parsed_md/           # PDF 解析生成的中间 Markdown（不纳入版本管理）
 ├── chroma_db/           # ChromaDB 持久化文件（不纳入版本管理）
+├── neo4j_data/          # Neo4j 持久化文件（不纳入版本管理）
+├── output.txt           # 问答测试输出文件 
 └── requirement.txt
 ```
 
